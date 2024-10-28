@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom Manipulation</title>
+    <style>
+        body{
+            background-color: #29293d;
+        }
+       .container{
+            margin:20px auto;
+            width: 300px;
+            background-color: #8585ad;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        #Seasons{
+            width:80%;
+            display:block;
+            margin:20px auto;
+        }
+        .app-heading{
+            color: #fff;
+            text-align: center;
+
+        }
+        .btn{
+            border: none;
+            padding: 5px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .btn-group{
+            display: flex;
+            justify-content: space-around;
+        }
+        .btn-summer{
+            background-color: #ffcc00;
+        }
+        .btn-winter{
+            background-color: #4d4d4d;
+            color: #fff;
+        }
+
+        
+
+    </style>
+</head>
+<body id="body">
+<div>
+    <div class="container" id="container">
+        <h1 class="app-heading" id="app-heading">Seasons</h1>
+        <img src="winter.png" alt="Seasons"id ="Seasons">
+
+    <div class="btn-group">
+    
+      <button class="btn btn-winter"onclick="toggle('winter')">Turn winter</button>
+      <button class="btn btn-summer" onclick="toggle('winter')">Turn summer</button>
+      
+    </div>
+    </div>
+    <script>
+        function toggle(turnsummer){
+            const seasonsImgElement=document.getElementById('Seasons');
+            const bodyElement=document.getElementById('body');
+            const containerElement=document.getElementById('container');
+            const appHeadingElement=document.getElementById('app-heading');
+
+           
+            seasonsImgElement.src=turnsummer ? "summer.png":"winter.png";
+            bodyElement.style.backgroundColor=turnsummer ? "#ffb31a":"#29293d";
+            containerElement.style.backgroundColor=turnsummer ? "#fff":"#8585ad";
+            appHeadingElement.style.color=turnsummer ? "#000":"#fff";
+
+            
+            
+        }
+            
+            
+    </script>
+</body>
+</html>

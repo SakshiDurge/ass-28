@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom Manipulation</title>
+    <style>
+        body{
+            background-color: #29293d;
+        }
+       .container{
+            margin:20px auto;
+            width: 300px;
+            background-color: #8585ad;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        #bulb{
+            width:80%;
+            display:block;
+            margin:20px auto;
+        }
+        .app-heading{
+            color: #fff;
+            text-align: center;
+
+        }
+        .btn{
+            border: none;
+            padding: 5px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .btn-group{
+            display: flex;
+            justify-content: space-around;
+        }
+        .btn-on{
+            background-color: #ffcc00;
+        }
+        .btn-off{
+            background-color: #4d4d4d;
+            color: #fff;
+        }
+
+    </style>
+</head>
+<body id="body">
+<div>
+    <div class="container" id="container">
+        <h1 class="app-heading" id="app-heading">Bulb Toggler</h1>
+        <img src="bulb-off.png" alt="bulb"id ="bulb">
+
+    <div class="btn-group">
+    
+      <button class="btn btn-off"onclick="toggle(false)">Turn Off</button>
+      <button class="btn btn-on" onclick="toggle(true)">Turn On</button>
+    </div>
+    </div>
+    <script>
+        function toggle(turnOn){
+            const bulbImgElement=document.getElementById('bulb');
+            const bodyElement=document.getElementById('body');
+            const containerElement=document.getElementById('container');
+            const appHeadingElement=document.getElementById('app-heading');
+
+           
+            bulbImgElement.src=turnOn ? "bulb-on.png":"bulb-off.png";
+            bodyElement.style.backgroundColor=turnOn ? "#ffb31a":"#29293d";
+            containerElement.style.backgroundColor=turnOn ? "#fff":"#8585ad";
+            appHeadingElement.style.color=turnOn ? "#000":"#fff";
+        }
+            
+            
+    </script>
+</body>
+</html>
